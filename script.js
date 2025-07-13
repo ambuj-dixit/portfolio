@@ -21,3 +21,9 @@ sections.forEach(section => {
 });
 
 // Optional: Smooth scroll (already handled by CSS scroll-behavior)
+fetch('profile_image_base64.txt')
+  .then(response => response.text())
+  .then(base64Data => {
+    document.getElementById('profilePic').src = base64Data;
+  })
+  .catch(error => console.error('Error loading image:', error));
